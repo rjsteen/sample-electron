@@ -3,7 +3,9 @@ var Menu = remote.require('menu');
 var MenuItem = remote.require('menu-item');
 
 var menu = new Menu();
-menu.append(new MenuItem({ label: 'MenuItem1', click: function() { alert('wat'); } }));
+var shell = require('shell');
+menu.append(new MenuItem({ label: 'MenuItem1', click: function() { 
+ shell.openExternal('https://github.com');} }));
 menu.append(new MenuItem({ type: 'separator' }));
 menu.append(new MenuItem({ label: 'MenuItem2', click: function() { alert('watman'); } }));
 
